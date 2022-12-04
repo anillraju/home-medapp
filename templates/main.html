@@ -1,9 +1,33 @@
 <html>
+    <head>
+        <style>
+        .button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>
+        </head>
     <body>
+        <a href="http://10.0.0.8:3000/question?questionId=1&mode=qpaper" class="button">Retrieve Question Paper</a>
+        <br/>
+        <a href="http://10.0.0.8:3000/answer?questionId=1&mode=qpaper" class="button">Retrieve Answer Paper</a>
+        <br/>
+        <a href="http://10.0.0.8:3000/study" class="button">Today's Study</a>
+        <br/>
+        
+        
         <form action="/questionpaper" method="get">
             
-            <input type="number" id="questioncount" name="questioncount" value="3"><br><br>
-            <input type="submit" value="Submit">
+            <input type="number" id="questioncount" name="questioncount" value="20"><br><br>
+            <input type="submit" value="Make Question Paper" class="button">
         </form>
         <!-- <form action="/questionpaper?prevPaper=yes&paperNo=1" method="get">
             <input type="number" id="questioncount" name="questioncount" value="3"><br><br>
