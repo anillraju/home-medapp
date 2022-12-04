@@ -65,11 +65,11 @@ app.get("/question", (req, res) => {
     var nextQuestion = qNo + 1;
     var prevQuestion = qNo - 1;
     if(nextQuestion <= listToUse.length) {
-        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="http://10.0.0.8:3000/question?questionId=${nextQuestion}&mode=${mode}" class="step3 medium-screen-icon">`)    
-        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="http://10.0.0.8:3000/question?questionId=${prevQuestion}&mode=${mode}" class="step2 medium-screen-icon">`)    
+        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="/question?questionId=${nextQuestion}&mode=${mode}" class="step3 medium-screen-icon">`)    
+        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="/question?questionId=${prevQuestion}&mode=${mode}" class="step2 medium-screen-icon">`)    
     } else {
-        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="http://10.0.0.8:3000/answer?questionId=1&mode=${mode}" class="step3 medium-screen-icon">`)    
-        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="http://10.0.0.8:3000/answer?questionId=1&mode=${mode}" class="step2 medium-screen-icon">`)    
+        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="/answer?questionId=1&mode=${mode}" class="step3 medium-screen-icon">`)    
+        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="/answer?questionId=1&mode=${mode}" class="step2 medium-screen-icon">`)    
     }
     
     const $ = cheerio.load(data);
@@ -105,11 +105,11 @@ app.get("/answer", (req, res) => {
     var nextQuestion = Number(questionId) + 1;
     var prevQuestion =  Number(questionId) - 1;
     if(nextQuestion <= listToUse.length) {
-        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="http://10.0.0.8:3000/answer?questionId=${nextQuestion}&mode=${mode}" class="step3 medium-screen-icon">`)    
-        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="http://10.0.0.8:3000/answer?questionId=${prevQuestion}&mode=${mode}" class="step2 medium-screen-icon">`)    
+        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="/answer?questionId=${nextQuestion}&mode=${mode}" class="step3 medium-screen-icon">`)    
+        data = data.replace('<a class="step2 medium-screen-icon">', `<a href="/answer?questionId=${prevQuestion}&mode=${mode}" class="step2 medium-screen-icon">`)    
     } else {
         //keep revolving around answers
-        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="http://10.0.0.8:3000/answer?questionId=1&mode=${mode}" class="step3 medium-screen-icon">`)    
+        data = data.replace('<a class="step3 medium-screen-icon">', `<a href="/answer?questionId=1&mode=${mode}" class="step3 medium-screen-icon">`)    
     }
 
     const $ = cheerio.load(data);
